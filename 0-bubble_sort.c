@@ -1,5 +1,4 @@
 #include "sort.h"
-#include "print_array.c"
 
 /**
  * bubble_sort - sort using bubble algorithm
@@ -8,7 +7,7 @@
  */
 void bubble_sort(int *array, size_t size)
 {
-    int i = 0, temp = 0, cicle = 0, change = 0;
+    unsigned int i = 0, temp = 0, cicle = 0, change = 0;
 
     while (cicle != 1)
     {
