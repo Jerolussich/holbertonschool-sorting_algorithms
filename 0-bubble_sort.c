@@ -2,6 +2,11 @@
 #include "print_list.c"
 #include "print_array.c"
 
+/**
+ * bubble_sort - sort using bubble algorithm
+ * @array: Array given
+ * @size: Size given
+ */
 void bubble_sort(int *array, size_t size)
 {
     int i = 0, temp = 0, cicle = 0, change = 0;
