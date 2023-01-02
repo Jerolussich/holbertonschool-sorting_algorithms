@@ -10,10 +10,7 @@ void bubble_sort(int *array, size_t size)
 	unsigned int i = 0, temp = 0, cycle = 0, change = 0;
 
 	if (size == 1)
-	{
-		printf("%d\n", array[0]);
 		return;
-	}
 	while (cycle != 1)
 	{
 		change = 0;
