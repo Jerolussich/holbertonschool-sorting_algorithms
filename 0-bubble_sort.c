@@ -1,5 +1,4 @@
 #include "sort.h"
-#include "print_list.c"
 #include "print_array.c"
 
 /**
