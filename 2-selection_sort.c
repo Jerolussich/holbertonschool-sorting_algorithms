@@ -14,7 +14,6 @@ void selection_sort(int *array, size_t size)
 		return;
 	for (i = 0; i < size - 1; i++)
 	{
-		printf("%d\n", array[i]);
 		temp = array[i];
 		smallest_number_found = array[i];
 		action = 0;
