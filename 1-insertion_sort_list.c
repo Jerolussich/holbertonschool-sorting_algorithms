@@ -34,7 +34,8 @@ void insertion_sort_list(listint_t **list)
                 *list = node;
 
             /*Print the list*/
-            for (listint_t *p = *list; p != NULL; p = p->next)
+            listint_t *p = *list;
+            for (; p != NULL; p = p->next)
                 printf("%d ", p->n);
             putchar('\n');
         }
