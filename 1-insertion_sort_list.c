@@ -15,13 +15,13 @@ void insertion_sort_list(listint_t **list)
     current = (*list)->next;
     while (current != NULL)
     {
-        // Save the current node
+        /* Save the current node*/
         listint_t *node = current;
 
-        // Find the insertion point
+        /*Find the insertion point*/
         while (node->prev != NULL && node->prev->n > node->n)
         {
-            // Swap the node with its predecessor
+            /*Swap the node with its predecessor*/
             node->prev->next = node->next;
             if (node->next != NULL)
                 node->next->prev = node->prev;
@@ -33,7 +33,7 @@ void insertion_sort_list(listint_t **list)
             else
                 *list = node;
 
-            // Print the list
+            /*Print the list*/
             for (listint_t *p = *list; p != NULL; p = p->next)
                 printf("%d ", p->n);
             putchar('\n');
