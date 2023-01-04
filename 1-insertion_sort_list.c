@@ -7,7 +7,7 @@
  */
 void insertion_sort_list(listint_t **list)
 {
-    listint_t *current;
+    listint_t *current, *p;
 
     if (list == NULL || *list == NULL)
         return;
@@ -17,7 +17,7 @@ void insertion_sort_list(listint_t **list)
     {
         /* Save the current node*/
         listint_t *node = current;
-
+        
         /*Find the insertion point*/
         while (node->prev != NULL && node->prev->n > node->n)
         {
@@ -34,8 +34,7 @@ void insertion_sort_list(listint_t **list)
                 *list = node;
 
             /*Print the list*/
-            listint_t *p = *list;
-            for (; p != NULL; p = p->next)
+            for (p = *list; p != NULL; p = p->next)
                 printf("%d ", p->n);
             putchar('\n');
         }
