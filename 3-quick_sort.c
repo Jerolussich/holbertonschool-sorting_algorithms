@@ -7,7 +7,6 @@
  */
 void quick_sort(int *array, size_t size)
 {
-	int pivot = array[size - 1];
 	int i = -1, temp;
 	unsigned int j;
 
@@ -15,7 +14,7 @@ void quick_sort(int *array, size_t size)
 	{
 		return;
 	}
-
+	int pivot = array[size - 1];
 	for (j = 0; j < size - 1; j++)
 	{
 		if (array[j] < pivot)
