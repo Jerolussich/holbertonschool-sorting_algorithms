@@ -7,20 +7,20 @@
  */
 void quick_sort(int *array, size_t size)
 {
-	int pivot = array[size - 1];	/* pivot is the last element */
-	int i = -1;	/* index of smaller element */
-	int temp;
+	int pivot = array[size - 1];
+	int i = -1, temp;
+	unsigned int j;
 
-	if (size < 2)	/* base case */
+	if (size < 2)
 	{
 		return;
 	}
 
-	for (int j = 0; j < size - 1; j++)	/* loop through array */
+	for (j = 0; j < size - 1; j++)
 	{
-		if (array[j] < pivot)	/* if current element is smaller than pivot */
+		if (array[j] < pivot)
 		{
-			i++;	/* increment index of smaller element */
+			i++;
 			temp = array[i];
 			array[i] = array[j];
 			array[j] = temp;
