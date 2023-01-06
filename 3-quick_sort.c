@@ -7,7 +7,7 @@
  */
 void quick_sort(int *array, size_t size)
 {
-	int i = -1, temp, pivot = array[size - 1];
+	int temp, pivot = array[size - 1], i = 0;
 	unsigned int j;
 
 	if (size < 2 || array == NULL)
@@ -21,7 +21,6 @@ void quick_sort(int *array, size_t size)
 			temp = array[i];
 			array[i] = array[j];
 			array[j] = temp;
-			print_array(array, size);
 			i++;
 		}
 	}
