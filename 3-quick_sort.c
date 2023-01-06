@@ -14,16 +14,17 @@ void quick_sort(int *array, size_t size)
 	{
 		return;
 	}
+
 	pivot = array[size - 1];
 	for (j = 0; j < size - 1; j++)
 	{
 		if (array[j] < pivot)
 		{
-			i++;
 			temp = array[i];
 			array[i] = array[j];
 			array[j] = temp;
 			print_array(array, size);
+			i++;
 		}
 	}
 
