@@ -7,13 +7,14 @@
  */
 void quick_sort(int *array, size_t size)
 {
-	int temp, pivot = array[size - 1];
+	int pivot = array[size - 1], temp;
 	unsigned int i = 0, j;
 
-	if (size < 2 || array == NULL)
+	if (array == NULL || size < 2)
 	{
 		return;
 	}
+
 	for (j = 0; j < size - 1; j++)
 	{
 		if (array[j] < pivot)
