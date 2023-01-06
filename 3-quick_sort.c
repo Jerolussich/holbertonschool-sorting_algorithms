@@ -7,28 +7,51 @@
  */
 void quick_sort(int *array, size_t size)
 {
-	int temp, pivot = array[size - 1], i = 0;
-	unsigned int j;
-
+	int pivot, temp, i = 0, j = size - 1;
+	
 	if (size < 2 || array == NULL)
 	{
 		return;
 	}
-	for (j = 0; j < size - 1; j++)
+
+	if (size % 2 == 0)
 	{
-		if (array[j] < pivot)
+		pivot = array[size / 2 - 1];
+	}
+	else
+	{
+		pivot = array[size / 2];
+	}
+
+	if ((pivot > array[0] && pivot < array[size - 1]) || (pivot > array[size - 1] && pivot < array[0]))
+	{
+		pivot = array[0];
+	}
+	else if ((pivot > array[size / 2] && pivot < array[size - 1]) || (pivot > array[size - 1] && pivot < array[size / 2]))
+	{
+		pivot = array[size - 1];
+	}
+
+	while (i <= j)
+	{
+		while (array[i] < pivot)
+		{
+			i++;
+		}
+		while (array[j] > pivot)
+		{
+			j--;
+		}
+		if (i <= j)
 		{
 			temp = array[i];
 			array[i] = array[j];
 			array[j] = temp;
 			i++;
+			j--;
 		}
 	}
-
-	temp = array[i];
-	array[i] = pivot;
-	array[size - 1] = temp;
 	print_array(array, size);
-	quick_sort(array, i);
-	quick_sort(array + i + 1, size - i - 1);
+	quick_sort(array, j + 1);
+	quick_sort(array + i, size - i);
 }
